@@ -8,7 +8,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ProyectosCE DOCS',
+  title: 'ProyectosCE',
   tagline: 'Ingeniería en Computadores TEC',
   favicon: 'img/favicon.ico',
 
@@ -69,6 +69,20 @@ const config = {
       }),
     ],
   ],
+  plugins: [
+    // aquí empiezan los sidebars custom
+[
+    '@docusaurus/plugin-content-docs',
+    {
+      id: 'GeomertyTEC',
+      path: 'proyectos/CE1106/GeomertyTEC',
+      routeBasePath: 'GeomertyTEC',
+      sidebarPath: 'C:/Users/amv22/Dev/repos/proyectosce.github.io/customsb/GeomertyTEC.js',
+      include: ['**/*.md', '**/*.mdx', '**/intro.md'],
+    },
+  ],
+// aquí terminan los sidebars custom
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -76,21 +90,15 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'ProyectosCE',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
         },
         items: [
+          {to: '/about', label: 'Acerca de', position: 'left'},
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/ProyectosCE',
             label: 'GitHub',
             position: 'right',
           },
@@ -100,28 +108,20 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Links',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'TEC',
+                href: 'https://tec.ac.cr',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Repositorio',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Github',
+                href: 'https://github.com/ProyectosCE',
               },
             ],
           },
@@ -129,17 +129,13 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'About',
+                to: '/about',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Elaborado por estudiantes del TEC. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
