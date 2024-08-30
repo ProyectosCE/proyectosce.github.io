@@ -77,7 +77,7 @@ const config = {
       id: 'GeomertyTEC',
       path: 'proyectos/CE1106/GeomertyTEC',
       routeBasePath: 'GeomertyTEC',
-      sidebarPath: 'C:/Users/amv22/Dev/repos/proyectosce.github.io/customsb/GeomertyTEC.js',
+      sidebarPath: 'customsb/GeomertyTEC.js',
       include: ['**/*.md', '**/*.mdx', '**/intro.md'],
     },
   ],
@@ -96,6 +96,7 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+          {to: '/proyectos', label: 'Proyectos', position: 'left'},
           {to: '/about', label: 'Acerca de', position: 'left'},
           {
             href: 'https://github.com/ProyectosCE',

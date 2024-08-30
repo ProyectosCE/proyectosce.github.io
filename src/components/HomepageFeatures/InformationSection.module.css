@@ -1,0 +1,75 @@
+:root {
+  --info-background-color: #f9fbfd;
+  --info-text-color: #333;
+  --info-heading-color: #001030;
+  --button-background-color: #3a7af3;
+  --button-hover-color: #1f5bb5;
+}
+
+[data-theme='dark'] {
+  --info-background-color: #1e2025;
+  --info-text-color: #e1e1e1;
+  --info-heading-color: #3a7af3;
+  --button-background-color: #1f5bb5;
+  --button-hover-color: #3a7af3;
+}
+
+.infoSection {
+  background-color: var(--info-background-color);
+  min-height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+  padding: 60px 20px;
+  display: flex; /* Flexbox para centrar contenido */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centra el contenido verticalmente */
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 32px;
+  color: var(--info-heading-color);
+  margin-bottom: 20px;
+}
+
+.description {
+  color: var(--info-text-color);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+}
+
+.featureItem {
+  font-size: 18px;
+  color: var(--info-text-color);
+  margin-bottom: 10px;
+}
+.ctaButton {
+  display: inline-block; /* Hace que el enlace se comporte como un botón */
+  background-color: var(--button-background-color);
+  color: white; /* Mantén el texto en blanco */
+  text-align: center;
+  text-decoration: none; /* Elimina el subrayado del texto */
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s; /* Añade transición para el color */
+  border: none; /* Asegura que no haya borde */
+}
+
+.ctaButton:hover {
+  background-color: var(--button-hover-color);
+  color: white; /* Mantén el texto en blanco al pasar el ratón */
+  text-decoration: none; /* Asegura que no se subraye al pasar el ratón */
+}

@@ -1,0 +1,146 @@
+:root {
+    /* Variables para el tema claro */
+    --background-color: #f6f9fc;
+    --text-color: #333;
+    --highlight-color: #3a7af3; /* Azul claro para destacar */
+    --button-background-color: #3a7af3; /* Azul claro para el botón */
+    --button-hover-color: #1f5bb5; /* Azul más oscuro para el hover en modo claro */
+  }
+  
+  [data-theme='dark'] {
+    /* Variables para el tema oscuro */
+    --background-color: #1c1e21;
+    --text-color: #e1e1e1;
+    --highlight-color: #589df8; /* Azul más claro para destacar en tema oscuro */
+    --button-background-color: #1f5bb5; /* Azul oscuro para el botón en tema oscuro */
+    --button-hover-color: #3a7af3; /* Azul más claro para hover en tema oscuro */
+  }
+  
+  .heroBanner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    color: var(--text-color); /* Color de texto */
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .mainHeading {
+    color: var(--text-color); /* Asegura que el color del texto principal cambie según el tema */
+  }
+  
+  .highlight {
+    color: var(--highlight-color); /* Color de destaque */
+  }
+  
+  .ctaButton {
+    background-color: var(--button-background-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .ctaButton:hover {
+    background-color: var(--button-hover-color);
+  }
+  
+  /* Resto de tus estilos... */
+  
+  .container {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección para apilar en pantallas pequeñas */
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+  }
+  
+  .textContainer {
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+  
+  .subheading {
+    color: #5978f3;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .description {
+    margin: 20px 0;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+
+  
+  .imageContainer {
+    position: relative; /* Asegura que el texto de crédito esté posicionado relativamente a este contenedor */
+    text-align: center; /* Centra el texto debajo de la imagen */
+  
+  }
+  
+  .heroImage {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+  }
+
+  .imageCredit {
+    font-size: 12px;
+    color: var(--text-color); /* Utiliza la variable de color de texto actual */
+  }
+  
+  .imageCredit a {
+    color: var(--highlight-color); /* Utiliza el color de resaltado */
+    text-decoration: none; /* Quita el subrayado del enlace */
+  }
+  
+  .imageCredit a:hover {
+    text-decoration: underline; /* Añade subrayado al pasar el ratón */
+  }
+  
+  /* Media Queries para diseño responsivo */
+  @media (min-width: 768px) {
+    .container {
+      flex-direction: row; /* Diseño en fila para pantallas más grandes */
+      text-align: left; /* Alinea texto a la izquierda */
+    }
+  
+    .textContainer {
+      margin-bottom: 0;
+    }
+  
+    .mainHeading {
+      font-size: 48px; /* Aumenta el tamaño del texto en pantallas más grandes */
+    }
+  
+    .description {
+      font-size: 18px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .heroBanner {
+      padding: 40px; /* Más espacio en pantallas más grandes */
+    }
+  
+    .mainHeading {
+      font-size: 56px;
+    }
+  
+    .description {
+      font-size: 20px;
+    }
+  }
+  

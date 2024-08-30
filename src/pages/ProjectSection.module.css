@@ -1,0 +1,120 @@
+root {
+    /* Variables para el tema claro */
+    --background-color: #cddce9; /* Color de fondo claro */
+    --card-color: #b0d2ee;
+    --text-color: #333; /* Color de texto claro */
+    --highlight-color: #3a7af3; /* Color de destaque claro */
+    --button-background-color: #3a7af3; /* Color de fondo del botón en modo claro */
+    --button-hover-color: #1f5bb5; /* Color de fondo del botón al pasar el ratón en modo claro */
+  }
+  
+  [data-theme='dark'] {
+    /* Variables para el tema oscuro */
+    --background-color: #1c1e21; /* Color de fondo oscuro */
+    --card-color: #27303f;
+    --text-color: #e1e1e1; /* Color de texto claro en tema oscuro */
+    --highlight-color: #9bc6ff; /* Color de destaque en tema oscuro */
+    --button-background-color: #8dbaff; /* Color de fondo del botón en tema oscuro */
+    --button-hover-color: #3a7af3; /* Color del botón al pasar el ratón en tema oscuro */
+  }
+
+  .customBackground {
+    background-color: var(--background-color); /* Ajusta a un color específico o usa una variable */
+    min-height: 100vh; /* Asegura que cubra toda la altura de la ventana */
+    padding: 40px 0; /* Espaciado interno alrededor del contenido */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+  }
+
+.courseTitle {
+    text-align: left; /* Alinea el título del curso a la izquierda */
+    font-size: 2rem;
+    margin: 2rem 0;
+    color: var(--ifm-color-text); /* Usa el color de texto del tema */
+  }
+  .sectionTitle {
+    text-align: center;
+    font-size: 36px;
+    color: var(--highlight-color);
+    margin-bottom: 40px;
+  }
+  .courseSection {
+    margin-bottom: 4rem; /* Espaciado entre secciones de curso */
+  }
+  
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuye las tarjetas uniformemente */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-bottom: 40px;
+  }
+  
+  .projectCard {
+    text-align: center;
+    background-color: var(--card-color);
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease, var(--card-color) 0.3s;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden; /* Oculta cualquier contenido que se salga de los bordes */
+    padding-bottom: 16px; /* Espacio solo en la parte inferior para separar los chips */
+  }
+  
+  .projectCard:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+  }
+  
+  .projectImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ajusta la imagen para que cubra todo el ancho sin deformarse */
+    display: block; /* Elimina el espacio en línea alrededor de la imagen */
+    margin-bottom: 16px; /* Espacio entre la imagen y los chips */
+  }
+  
+  .projectTitle {
+    padding: 2px;
+    border-radius: 4px;
+    color: var(--highlight-color);
+    text-decoration: none;
+  }
+  
+  .chipsContainer {
+    display: flex;
+    gap: 8px;
+    padding: 0 16px; /* Espacio horizontal alrededor de los chips */
+    margin: 8px 0;
+    align-items: center;
+  }
+  
+  .chip {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--button-background-color);
+    color: var(--button-background-color);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  
+  .chipMore {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4px;
+    text-decoration: none;
+  }
+  

@@ -63,7 +63,7 @@ const updateDocusaurusConfig = (sidebars) => {
       id: '${id}',
       path: 'proyectos/${carpeta}/${id}',
       routeBasePath: '${id}',
-      sidebarPath: '${sidebarPath.replace(/\\/g, '/').replace(__dirname, '.')}',
+      sidebarPath: '${path.relative(__dirname, sidebarPath).replace(/\\/g, '/')}',
       include: ['**/*.md', '**/*.mdx', '**/intro.md'],
     },
   ],`
@@ -75,6 +75,7 @@ const updateDocusaurusConfig = (sidebars) => {
 
   fs.writeFileSync(configPath, newConfigContent, 'utf-8');
 };
+
 
 const main = () => {
   const sidebars = [];

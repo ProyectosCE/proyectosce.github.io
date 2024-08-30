@@ -8,7 +8,7 @@ const outputFilePath = path.join(dataDir, 'courseSections.json'); // Ruta del ar
 
 // Crear el directorio 'data' si no existe
 if (!fs.existsSync(dataDir)) {
-  fs.mkdirSync(dataDir, { recursive: true }); // Crea el directorio, incluyendo los intermedios si es necesario
+  fs.mkdirSync(dataDir, { recursive: true });
 }
 
 const generateCourseSections = () => {
@@ -36,6 +36,23 @@ const generateCourseSections = () => {
           const imgPathProyectos = path.join(carpetaPath, proyecto, 'img', 'header.png'); // Ruta esperada de la imagen en 'proyectos'
           const imgPathStatic = path.join(staticRoot, carpeta, proyecto, 'header.png'); // Ruta de destino en 'static'
 
+          const tagsPath = path.join(carpetaPath, proyecto, 'tags.json'); // Ruta del archivo tags.json
+          let tags = [];
+
+          // Intentar leer las etiquetas desde tags.json
+          if (fs.existsSync(tagsPath)) {
+            try {
+              const tagsData = fs.readFileSync(tagsPath, 'utf8');
+              tags = JSON.parse(tagsData);
+              console.log(`Etiquetas encontradas para ${proyecto}:`, tags);
+            } catch (error) {
+              console.error(`Error leyendo ${tagsPath}:`, error.message);
+              tags = []; // Si hay un error al leer, dejar tags vacío
+            }
+          } else {
+            console.log(`Archivo tags.json no encontrado para ${proyecto}. Usando tags vacíos.`);
+          }
+
           console.log(`Buscando imagen en ${imgPathStatic}`);
           if (fs.existsSync(imgPathStatic)) {
             // La imagen ya está en static, usamos esa ruta
@@ -43,6 +60,7 @@ const generateCourseSections = () => {
               title: proyecto,
               image: `/proyectos/${carpeta}/${proyecto}/header.png`, // Ruta accesible desde static
               link: `/${proyecto}`,
+              tags: tags,
             });
             console.log(`Imagen encontrada en static: ${imgPathStatic}`);
           } else if (fs.existsSync(imgPathProyectos)) {
@@ -64,15 +82,22 @@ const generateCourseSections = () => {
               title: proyecto,
               image: `/proyectos/${carpeta}/${proyecto}/header.png`, // Ruta accesible desde static
               link: `/${proyecto}`,
+              tags: tags,
             });
           } else {
             console.log(`Imagen no encontrada en ninguna ubicación: ${imgPathProyectos}`);
+            projects.push({
+              title: proyecto,
+              image: null, // Sin imagen
+              link: `/${proyecto}`,
+              tags: tags,
+            });
           }
         });
 
         if (projects.length > 0) {
           courseSections.push({
-            courseTitle: carpeta, // Nombre de la carpeta (carpeta)
+            courseTitle: carpeta,
             projects,
           });
         }

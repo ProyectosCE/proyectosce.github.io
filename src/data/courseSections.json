@@ -5,7 +5,13 @@
       {
         "title": "GeomertyTEC",
         "image": "/proyectos/CE1106/GeomertyTEC/header.png",
-        "link": "/GeomertyTEC"
+        "link": "/GeomertyTEC",
+        "tags": [
+          "ASM 8086",
+          "No FPU",
+          "Gui",
+          "Buffers"
+        ]
       }
     ]
   }
