@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkproyectosce=self.webpackChunkproyectosce||[]).push([[9979],{2102:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"BreackOutTEC"}')}}]);
